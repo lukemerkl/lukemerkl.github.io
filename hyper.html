@@ -56,7 +56,17 @@ a {
   color: black;
 }
 
+b {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
 navButton:hover, a:hover {
+  opacity: 0.7;
+}
+
+navButton:hover, b:hover {
   opacity: 0.7;
 }
 
@@ -80,7 +90,7 @@ navButton:hover, a:hover {
 .subCentered {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 92%;
+  top: 35%;
   left: 50%;
   font-size: 25px;
 }
@@ -117,6 +127,15 @@ navButton:hover, a:hover {
   text-decoration: none;
 }
 
+.navbar b {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
 /* Right-aligned link */
 .navbar a.right {
   float: right;
@@ -124,6 +143,11 @@ navButton:hover, a:hover {
 
 /* Change color on hover */
 .navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar b:hover {
   background-color: #ddd;
   color: black;
 }
@@ -187,15 +211,20 @@ navButton:hover, a:hover {
     width:100%;
   }
 }
+@media screen and (max-width: 400px) {
+  .navbar b {
+    float: none;
+    width:100%;
+  }
+}
 </style>
 </head>
 <body>
 
 <div class="header">
   <div class="container">
-  <img class="fancypic" src="Pics/MEP_LIT.png" alt="">
-  <div class="centered">M A G I C &nbsp;&nbsp;  S M O K E</div>
-  <div class="subCentered">It is inevitable</div>
+  <img class="fancypic" src="Pics/pod.jpeg" alt="">
+  <div class="subCentered">*zoom*</div>
   </div>
 </div>
 
@@ -206,54 +235,28 @@ navButton:hover, a:hover {
 </div>
 
 <div class="row">
-  <div class="side">
-
-    <div class="card">
-      <img src="Pics/merkl.jpg" alt="Merk" style="width:100%">
-      <h1>Luke Merkl</h1>
-      <p class="title">Present</p>
-      <p>NYC, NY</p>
-
-      <p class="title">Past</p>
-      <p>Northeastern University COE '18</p>
-      <p>Paradigm Hyperloop</p>
-      <div style="margin: 24px 0;">
-        <a href="https://github.com/lukemerkl"><i class="fa fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/luke-merkl/"><i class="fa fa-linkedin"></i></a>
-      </div>
-      <p><button>Contact</button></p>
-    </div>
-
-    <h3>About Me</h3>
-    <p>Asking "what if" and "why" since 1995</p>
-
-    <img class="aboutmepic" src="Pics/whoosh.png" alt="Merk">
-    <p>Isochrones from a satellite focused trade study.</p>
-
-    <img class="aboutmepic" src="Pics/zoomm.jpeg" alt="Merk">
-    <p>First trip in the 2014 Mustang GT</p>
-
-    <img class="aboutmepic" src="Pics/sparky.jpeg" alt="Merk">
-    <p>Flight analog to digital interface for the Hyperloop Pod</p>
-
-  </div>
 
   <div class="main">
-    <h2>  <a href="hyper.html">HYPERLIT</a> </h2>
-    <h5>The inside of the Paradigm Hyperloop Pod:</h5>
-    <img src="Pics/MEP.jpg" alt="MEP" style="width:100%">
+    <h2>  <a href="#">Hyperloop!</a> </h2>
+    <h5>What is the hyperloop?</h5>
+    <!<img src="Pics/MEP.jpg" alt="MEP" style="width:60%">
 
-    <p>The pod has multiple electrical subsystems: avionics, batteries, sensors,
-      and communications. <br>
+    <p> Most of my experience with the hyperloop comes fromt he SpaceX competitions
+      so we'll start there. Elon Musk
+      <a href="https://www.tesla.com/sites/default/files/blog_images/hyperloop-alpha.pdf"
+      style="font-size: 16px; color:red">published a whitepaper</a>
 
+       in 2012, outlining a faster and safer way to travel. <br> He would later create a student
+      competition to design, build, and test scaled hyperloop pods. I joined Paradigm
+      in 2016, looking for some more hands on design experience. <br>Oh man did I get it.
     </p>
 
-    <br>
-    <h2> <a href="capstone.html">Senior Capstone Project</a> </h2>
-    <h5>Soon...</h5>
-    <img src="Pics/Node_render.jpeg" alt="MEP" style="width:100%">
-    <p></p>
-    <p></p>
+    <!<br>
+    <!<h5>Soon...</h5>
+    <!<img src="Pics/Node_render.jpeg" alt="MEP" style="width:60%">
+    <!<p></p>
+    <!<p></p>
+
   </div>
 </div>
 
