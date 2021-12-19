@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<title>Merk Makes</title>
+<title>MOBO</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -18,7 +18,7 @@ body {
 
 /* Style the header */
 .header {
-  padding: 20px;
+  padding: 50px;
   text-align: center;
   color: black;
 }
@@ -56,7 +56,17 @@ a {
   color: black;
 }
 
+b {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
 navButton:hover, a:hover {
+  opacity: 0.7;
+}
+
+navButton:hover, b:hover {
   opacity: 0.7;
 }
 
@@ -68,8 +78,8 @@ navButton:hover, a:hover {
 }
 
 .centered {
-  top: 40%;
-  left: 30%;
+  top: 35%;
+  left: 26%;
   font-size: 45px;
 
   position: absolute;
@@ -80,8 +90,8 @@ navButton:hover, a:hover {
 .subCentered {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 45%;
-  left: 30%;
+  top: 35%;
+  left: 50%;
   font-size: 25px;
 }
 
@@ -117,6 +127,15 @@ navButton:hover, a:hover {
   text-decoration: none;
 }
 
+.navbar b {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
 /* Right-aligned link */
 .navbar a.right {
   float: right;
@@ -124,6 +143,11 @@ navButton:hover, a:hover {
 
 /* Change color on hover */
 .navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar b:hover {
   background-color: #ddd;
   color: black;
 }
@@ -187,73 +211,67 @@ navButton:hover, a:hover {
     width:100%;
   }
 }
+@media screen and (max-width: 400px) {
+  .navbar b {
+    float: none;
+    width:100%;
+  }
+}
 </style>
 </head>
 <body>
 
 <div class="header">
   <div class="container">
-  <img class="fancypic" src="Pics/merkl_scribbles.jpg" alt="">
-  <div class="centered">M E R K      M A K E S</div>
-  <div class="subCentered">I have no clue what I am doing</div>
+  <img class="fancypic" src="Pics/mobov1_sch.png" alt="">
+  <div class="Centered">*zoom*</div>
   </div>
 </div>
 
 <div class="navbar">
-  <a href="sparky.html">Magic Smoke</a>
-  <!---a <a href="Mobiles.html">Mobiles</a--->
-  <!---a href="#">Meals (not ready yet)</a--->
-  <!---a href="#">Mems (also not ready)</a--->
+  <a href="index.html">Home</a>
+
   <a href="merkmakes.html" class="right">Main</a>
 </div>
 
 <div class="row">
-  <div class="side">
-
-    <div class="card">
-      <img src="Pics/merkl.jpg" alt="Merk" style="width:100%">
-      <h1>Luke Merkl</h1>
-      <p class="title">Present</p>
-      <p>NYC, NY</p>
-
-      <p class="title">Past</p>
-      <p>Northeastern University COE '18</p>
-      <p>Paradigm Hyperloop</p>
-      <div style="margin: 24px 0;">
-        <a href="https://github.com/lukemerkl"><i class="fa fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/luke-merkl/"><i class="fa fa-linkedin"></i></a>
-      </div>
-      <p><button>Contact</button></p>
-    </div>
-
-    <h3>About Me</h3>
-    <p>Asking "what if" and "why" since 1995</p>
-
-    <img class="aboutmepic" src="Pics/whoosh.png" alt="Merk">
-    <p>Isochrones from a satellite focused trade study.</p>
-
-    <img class="aboutmepic" src="Pics/zoomm.jpeg" alt="Merk">
-    <p>First trip in the 2014 Mustang GT</p>
-
-    <img class="aboutmepic" src="Pics/sparky.jpeg" alt="Merk">
-    <p>Flight analog to digital interface for the Hyperloop Pod</p>
-
-  </div>
 
   <div class="main">
-    <h2>  <a href="hyper.html">HYPERLIT</a> </h2>
-    <h5>It all started in a rental in L.A...</h5>
-    <img src="Pics/MEP.jpg" alt="MEP" style="width:100%">
+    <h2> The Motherboard</h2>
+    <h5>Can you tell that was my first schematic? It hurts to look at now. </h5>
+    <!<img src="Pics/MEP.jpg" alt="MEP" style="width:60%">
 
-    <p>Arma virumque cano troiae qui primus ab oris</p>
-    <p>Italiam lavinaque profugit</p>
+    <p> All of these files are on
+      <a href="https://github.com/ParadigmHyperloop/electrical/tree/master/Motherboard"
+      style="font-size: 16px; color:red">Github</a>
+      with tags for each version we deemed final enough to procure. We did our best to be good
+      git stewards but still managed to break the repo once or twice.
 
-    <br>
-    <h2>Senior Capstone Project</h2>
-    <h5>Soon...</h5>
-    <img src="Pics/Node_render.jpeg" alt="MEP" style="width:100%">
-    <p></p>
-    <p></p>
+    </p>
+
+    <p>
+    </p>
+
+    <!<br>
+    <h2> The Pod </h2>
+    <h5>Let's outline the Pod before getting into design details.</h5>
+    <img src="Pics/pod_full.jpeg" alt="MEP" style="width:60%">
+    <p>
+    </p>
+
+    <h5>High Level Electrical Schematic</h5>
+    <img src="Pics/High_Level_Schematic.jpg" alt="MEP" style="width:60%">
+
+    <p>
+
+    </p>
+    <p> <a href="Motherboard.html"
+    style="font-size: 16px; color:red">The Motherboard</a>
+
+    </p>
+    <p>
+    </p>
+
   </div>
 </div>
 
