@@ -249,24 +249,39 @@ navButton:hover, b:hover {
 
     </p>
 
-    <p>
-    </p>
 
     <!<br>
-    <h2> The Pod </h2>
-    <h5>Let's outline the Pod before getting into design details.</h5>
-    <img src="Pics/pod_full.jpeg" alt="MEP" style="width:60%">
-    <p>
+    <h2> Rev 1.2 </h2>
+    <h5>I have so many questions for my past self</h5>
+    <img src="Pics/ADC_MUX.png" alt="MEP" style="width:40%">
+    <p> The main function of this board is to collect all of the analog signals around the Pod. The circuit in is
+      reused multiple times. An analog MUX is used to select an analog channel, which is fed through a buffer to the flight computer's
+      (Beaglebone Black) internal ADC for conversion. There were numerous areas to improve this solution.
+      <ul>
+        <li>The circuit doesn't take into account the 90-200 Ohms of resistance from the MUX</li>
+        <li>The buffer has a mix of sensor types coming in, each with different frequency characteristics</li>
+        <li>Definitely didn't simulate the op-amp. </li>
+        <! gotta plot that one in spice^. >
+        <li>The Beaglebone Black has a max ADC voltage of 1.8V. Most of the sensors are 0-5V scale</li>
+        <li>At a systems level: we never considered crosstalk and other errors on the line due to switching. </li>
+        <li>I picked an $8 op-amp for no other reason than "high speed". At least I buffered the ADC? </li>
+        <li>The MUX can accept 5V.. I'm not sure why I went to the trouble of making another rail</li>
+      </ul>
     </p>
 
-    <h5>High Level Electrical Schematic</h5>
-    <img src="Pics/High_Level_Schematic.jpg" alt="MEP" style="width:60%">
 
-    <p>
+    <img src="Pics/octo.png" alt="MEP" style="width:60%">
+
+    <p><br>
+    The first iteration of this board just about maxed out the GPIOs on the Beaglebone. (this is from memory.. need to
+    double check) These pins have some special functionality when used for display applications and have quirks on boot.
+
+
+
 
     </p>
-    <p> <a href="Motherboard.html"
-    style="font-size: 16px; color:red">The Motherboard</a>
+    <p>
+      
 
     </p>
     <p>
