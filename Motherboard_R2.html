@@ -79,8 +79,8 @@ navButton:hover, b:hover {
 }
 
 .centered {
-  top: 35%;
-  left: 26%;
+  top: 85%;
+  left: 50%;
   font-size: 45px;
 
   position: absolute;
@@ -91,7 +91,7 @@ navButton:hover, b:hover {
 .subCentered {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 35%;
+  top: 10%;
   left: 50%;
   font-size: 25px;
 }
@@ -224,8 +224,9 @@ navButton:hover, b:hover {
 
 <div class="header">
   <div class="container">
-  <img class="fancypic" src="Pics/mobov1_sch.png" alt="">
-  <div class="Centered">*zoom*</div>
+  <img class="fancypic" src="Pics/mobo_r2p1_p1.png" alt="">
+
+  <div class="centered">*improvement!*</div>
   </div>
 </div>
 
@@ -238,8 +239,8 @@ navButton:hover, b:hover {
 <div class="row">
 
   <div class="main">
-    <h2> The Motherboard</h2>
-    <h5>Can you tell that was my first schematic? It hurts to look at now. </h5>
+    <h2> Rev 2.1</h2>
+    <h5>Months of research and co-op helped improve this schematic quite a bit! It is certainly not perfect, but pretty good for a revision. </h5>
     <!<img src="Pics/MEP.jpg" alt="MEP" style="width:60%">
 
     <p> All of these files are on
@@ -252,51 +253,44 @@ navButton:hover, b:hover {
 
 
     <!<br>
-    <h2> Rev 1.2 </h2>
-    <h5>I have so many questions for my past self</h5>
-    <img src="Pics/ADC_MUX.png" alt="MEP" style="width:40%">
-    <p> The main function of this board is to collect all of the analog signals around the Pod. The circuit in is
-      reused multiple times. An analog MUX is used to select an analog channel, which is fed through a buffer to the flight computer's
-      (Beaglebone Black) internal ADC for conversion. There were numerous areas to improve this solution.
+    <h2> Analog -> digital </h2>
+    <h5>Some problems from R1.x were hammered out</h5>
+    <img src="Pics/R2_ADC.png" alt="MEP" style="width:60%">
+    <p> All of the lessons learned from a board and system level were pulled into the redesign of the entire system, but the Motherboard
+      had significant changes.
       <ul>
-        <li>The circuit doesn't take into account the 90-200 Ohms of resistance from the MUX</li>
-        <li>The buffer has a mix of sensor types coming in, each with different frequency characteristics</li>
-        <li>Definitely didn't simulate the op-amp. </li>
+        <li>The analog MUXs were swapped for fancy ADCs. </li>
+        <li>Power sequencing/enables to properly turn on the ADCs</li>
+        <li>Each ADC bank had similiar sensors, so a corner frequency could be designed into the buffer.</li>
         <! gotta plot that one in spice^. >
-        <li>The Beaglebone Black has a max ADC voltage of 1.8V. Most of the sensors are 0-5V scale</li>
-        <li>At a systems level: we never considered crosstalk and other errors on the line due to switching. </li>
-        <li>I picked an $8 op-amp for no other reason than "high speed". At least I buffered the ADC? </li>
-        <li>The MUX can accept 5V.. I'm not sure why I went to the trouble of making another rail</li>
+        <li>There's resistor divider slots in case one or two signals need to be dropped.. not perfect but adds flexibility</li>
+        <li>We did extensive testing, across the electrical team, with breakout boards before pulling into larger designs. </li>
+        <li>The MUX resistance is still an issue. It was considered but left in favor of more analog channels </li>
+        <li>The features of this ADC save pins and processing on the BeagleBone. </li>
+
       </ul>
     </p>
 
-
-    <img src="Pics/octo.png" alt="MEP" style="width:60%">
+    <img src="Pics/decoder.png" alt="MEP" style="width:60%">
 
     <p><br>
-    The first iteration of this board just about maxed out the GPIOs on the Beaglebone. (this is from memory.. need to
-    double check) These pins have some special functionality when used for display applications and have quirks on boot. They boot
-    in an indeterminite state and we were concerned the relays could intermittently be fired. So we decided to use... a Schmitt Trigger
-    inverter that is triggered by the Beaglebones POWER_GOOD signal to sink each optocoupler cathode. The GPIOs are fed through a noninverting open drain buffer.
-    This shouldn't work. There are no pullups and return current is going into the inverter?
+    There are so many ADCs on the SPI bus that a decoder is used to save Beaglebone pins. The LEDs
+    are used for bring-up and software development, not for "flight" units. Initially the clock is as slow as possible
+    to ensure all of the addresses map correctly. These LEDs were probably pretty detrimental to operation and it
+    probably should not have worked. I guess the ADC CS pin is sinking the extra current?
     <br>
 
-
-    <img src="Pics/octo_sub.png" alt="MEP" style="width:60%">
-
-
-
     </p>
-    But wait there's more!
-    <ul>
-      <li>The 3V3 rail has two regulators on the same net to boost available current. I should have picked a better part.</li>
-      <li>The DACs were 3x3mm QFNs that we had zero business trying to solder on to the board</li>
-      <li>All of the power is a label or global net instead of a proper power flag. One mispelling and a rail would be toast.</li>
-      <li>General use of hierarchical sheets is just wrong.</li>
-
-
-    </ul>
+      <img src="Pics/PWR_SEQ.PNG" alt="MEP" style="width:60%">
+      <br>
+    One pain point for the ADC is some interesting behavior during testing. It locks up when supplies are not brough up
+    in the right order. AVCC must always be greater than DVCC, but the VREF also has a play in the timing. The latter
+    isn't in the datasheet but it is fixed by
+    turning on analog-> digital -> VREF. A power sequencing chip ensures the Beaglebone has time to boot, then the beaglebone enables
+    the rails. the issue. The 3V3 rails are not tied together this time.
+    Each output powers half of the ADC bank, but they should have been designated A or B.
     <p>
+      <img src="Pics/mobo_test.jpeg" alt="MEP" style="width:60%">
 
 
     </p>
