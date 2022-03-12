@@ -271,7 +271,60 @@ navButton:hover, b:hover {
       air hockey table - which creates a cushion of air under the Pod, greatly reducing friction losses. The Pod
       is autonomous once set to the RUN state, handling navigation, telemetry, and safing itself in the event of an error.
       Self propulsion wasn't part of the equation until competition III.
+
     </p>
+
+    <p> There were five core subsystems levitation, braking, electrical, fuselage, software/controls, and air supply.
+      Levitation's primary objective was to ensure the pod has a stable low friction connection to the ground. Imagine
+      being able to push around this 2000lb beast with your pinky. It wasn't quite that easy but it was darn close compared
+      to the team of people needed to push it around on a special dolly. That was the "easier" part of the challenge. Some
+      of the dynamic air flow work the team did was pretty advanced. The pod needs to minimize what I'd think of as oscillations
+      while floating, i.e it can't "bounce" from side to side. It also needs to float sufficiently high such that it can pass
+      sections of the track with small height differences.
+
+    </p>
+
+    <p>
+      The braking team made sure the pod could stop in a safe and controlled manner. Fuselage worked to create a low drag shell, while
+      the air supply team ensured there was sufficient air that was routed safely for leviation and the braking system.
+
+    </p>
+
+    <p>
+      Software and controls had some fun tasks. The pod's brain is a Bealgebone Black, a TI Sitara AM335x based single board computer. It ran
+      all of the state machines, number crunching, telemetry streams, and sensor fusion.
+
+    </p>
+
+    <p>
+      My mindset was that electrical glued it all together. The software can't actuate the solenoids, read a temperature, or even know
+      the pod is on battery power without some clever interfaces. The team's functions were broken up by circuit board:
+
+      <ul>
+        <li>MotherBoard: Convert all sensor data onto the SPI bus for the Beaglebone and interface with the batteries </li>
+        <li>Batteries+Mangement System: Power the Pod, safely, using a commercial BMS</li>
+        <li>ThermoBoard: convert all of the thermocouples into a 0-5V analog signal </li>
+        <li>Pusher Interface: Essentially an interlock so the Pod cannot brake while being pushed </li>
+        <li>PowerBoard: Smartly switch between ground and battery power + create 24V and 5V rails for the other boards </li>
+        <li>LEDBoard: Quick visual status so someone can check the Pod's health+status from a distance </li>
+        <li>SSRBoard / Relay board: Array of solid state relays to actuate the various solenoids </li>
+        <li>IMU: Really owned by controls but it had to be connected </li>
+
+      </ul>
+
+
+
+      Here's our second place run from Competition II at SpaceX!
+
+    </p>
+
+
+
+    <p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qJk_zS7KJo4" title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
 
     <h5>High Level Electrical Schematic</h5>
     <img src="Pics/High_Level_Schematic.jpg" alt="MEP" style="width:60%">
