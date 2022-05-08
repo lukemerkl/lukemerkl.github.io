@@ -274,14 +274,14 @@ navButton:hover, b:hover {
     <img src="Pics/decoder.png" alt="MEP" style="width:60%">
 
     <p><br>
-    There are so many ADCs on the SPI bus that a decoder is used to save Beaglebone pins. The LEDs
+    There are so many ADCs on the SPI bus that a decoder is used to save Beaglebone pins for the chip selects. The LEDs
     are used for bring-up and software development, not for "flight" units. Initially the clock is as slow as possible
     to ensure all of the addresses map correctly. These LEDs were probably pretty detrimental to operation and it
     probably should not have worked. I guess the ADC CS pin is sinking the extra current?
     <br>
 
     </p>
-      <img src="Pics/PWR_SEQ.PNG" alt="MEP" style="width:60%">
+      <img src="Pics/PWR_SEQ.png" alt="MEP" style="width:60%">
       <br>
     One pain point for the ADC is some interesting behavior during testing. It locks up when supplies are not brough up
     in the right order. AVCC must always be greater than DVCC, but the VREF also has a play in the timing. The latter
