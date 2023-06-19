@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>MOBO_R1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 50px;
+  text-align: center;
+  color: black;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+navButton {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+b {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
+navButton:hover, a:hover {
+  opacity: 0.7;
+}
+
+navButton:hover, b:hover {
+  opacity: 0.7;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+
+}
+
+.centered {
+  top: 85%;
+  left: 50%;
+  font-size: 45px;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+}
+
+.subCentered {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 50%;
+  font-size: 25px;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.header h1.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar b {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar b:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-image: linear-gradient(to bottom right, #cc3300, white);
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-image: linear-gradient(to bottom right, white, #66ccff);
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #000000;
+  width: 100%;
+  padding: 10px;
+}
+
+.aboutmepic {
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 20px;
+}
+.fancypic {
+  width: 100%;
+  opacity: 0.6;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar b {
+    float: none;
+    width:100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+  <img class="fancypic" src="Pics/bountiful_sch.png" alt="">
+  <div class="centered">*a copy for now*</div>
+  </div>
+</div>
+
+<div class="navbar">
+  <a href="index.html">Home</a>
+
+  <a href="/" class="right">Main</a>
+</div>
+
+<div class="row">
+
+  <div class="main">
+    <h2> Soon!</h2>
+    <h5> I started a project with my room mate about 4 years ago.. its not done </h5>
+
+    <img src="Pics/bountiful_sch.png" alt="MEP" style="width:60%">
+
+    <p> All of these files are on
+      <a href="https://github.com/lukemerkl/bountifulHarvest"
+      style="font-size: 16px; color:red">Github.</a>
+
+    </p>
+
+
+    <!<br>
+    <h2> It will be done by summer </h2>
+    <h5> which summer?</h5>
+    <!img src="Pics/ADC_MUX.png" alt="MEP" style="width:40%">
+    <p> Sometime in 2019 we saw
+
+      <a href="https://farm.bot/"
+      style="font-size: 16px; color:red">Farmbot </a>
+
+      online and figured it would be a fun project to design something similiar
+      for our back yard. I saw some opportunity for condensing down some of the cabling
+      with a more interesting main board, but
+      decided to keep the first run simple with plans to make upgrade on future spins. One
+      idea was to remove the RaspPi and coprocessor and replace both with an FPGA with
+      a soft core (perhaps Artix 7 Series w/MicroBlaze) or TI's AM335x Sitara running Linux.
+      Both of these paths would be pretty challenging for me, so the goal was to keep most of
+      the core ICs the same to familiarize with the ecosystem.
+
+    </p>
+
+    <!<br>
+    <h2> Tragedy 1 </h2>
+
+    <p><br>
+    We both left our jobs and each moved to a different state for new challenges.
+    <br>
+
+
+    <!img src="Pics/octo_sub.png" alt="MEP" style="width:60%">
+
+    <h2> Tragedy 2 </h2>
+    <h5> Covid </h5>
+
+    <p><br>
+    Starting new jobs during the pandemic was not on the list of desired challenges. Eventually
+    things became more stable in day-to-day life and work started to pick back up on the schematic.
+    <br>
+
+    <h2> Tragedy 3 </h2>
+    <h5> How many weeks!! </h5>
+
+    <p><br>
+    There was a good 2 year period where I would make design changes with in-stock parts,
+    simulate them, tweak a bit, and then try to buy the BoM. 37+ week lead time. The tipping point was
+    when my carefully designed regulators became unobtanium for over a year.
+    <br>
+
+    <h2> Glimmer of hope </h2>
+
+
+    <p><br>
+    With part availability a bit more normal.. work goes one!
+    <a href="bountiful_harvest_1.html "
+    style="font-size: 16px; color:red">Plants!</a>
+
+    <br>
+
+
+
+
+    </p>
+
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>
